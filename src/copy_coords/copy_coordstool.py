@@ -43,7 +43,9 @@ class CopyCoordstool(QgsMapTool):
         # self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         self.iface = iface
 
-        self.cursor = QCursor(QPixmap(":/icons/cursor.png"), 1, 1)
+        self.cursor = QCursor(
+            QPixmap(":/plugins/copy_coords/icons/cursor.png"), 1, 1
+        )
 
     def activate(self):
         self.canvas.setCursor(self.cursor)

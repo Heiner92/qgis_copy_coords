@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="" >
+    <qresource prefix="/plugins/copy_coords/" >
+        <file>icons/nextgis_logo.svg</file>
         <file>icons/cursor.png</file>
     </qresource>
 </RCC>

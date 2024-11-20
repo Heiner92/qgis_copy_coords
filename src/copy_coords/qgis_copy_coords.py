@@ -54,7 +54,7 @@ class CopyCoords:
         self.action = QAction(
             self.tr("Copy coordinates"), self.iface.mainWindow()
         )
-        self.action.setIcon(QIcon(":/icons/cursor.png"))
+        self.action.setIcon(QIcon(":/plugins/copy_coords/icons/cursor.png"))
         self.action.setWhatsThis(self.tr("Copy coordinates"))
         self.actionAbout = QAction(
             self.tr("About plugin…"), self.iface.mainWindow()
@@ -74,6 +74,15 @@ class CopyCoords:
 
         # prepare map tool
         self.mapTool = CopyCoordstool(self.iface)
+
+        self.__show_help_action = QAction(
+            QIcon(":/plugins/copy_coords/icons/cursor.png"),
+            "Copy_Coords",
+        )
+        self.__show_help_action.triggered.connect(self.about)
+        plugin_help_menu = self.iface.pluginHelpMenu()
+        assert plugin_help_menu is not None
+        plugin_help_menu.addAction(self.__show_help_action)
 
     def __init_translator(self):
         # initialize locale
